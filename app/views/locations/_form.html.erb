@@ -10,12 +10,14 @@
       </ul>
     </div>
   <% end %>
+<div style="border:2px solid #CFECEC;border-radius: 10px;box-shadow: rgba(0,0,0,0.4) 2px 2px 0 2px;margin-left:3%; width:60%;text-indent:20px;">
 
   <div class="field">
-    <%= f.label :loc %><br />
+    <%= f.label :loc, 'Location'%><br />
     <%= f.text_field :loc %>
   </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>

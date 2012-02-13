@@ -1,9 +1,9 @@
-<h4 style="color:#007700;">Campus Free Food App</h4>
+<div style="background-color:#CFECEC; height:100px;"><br/><h1 style="color:#3300CC;">Campus Free Food App</h1></div>
 
 <p id="notice"><%= notice %></p><p id="alert"><%= alert %></p>
-<div id="login" class="login">
-  <span>Campus Food App</span>
-  <form action="/users/signIn" method="post">
+<div id="login" style="margin-left:35%;width:30%;border: 1px solid #154A6F;border-radius: 10px;box-shadow: rgba(0,0,0,0.4) 2px 2px 0 2px;text-indent:60px; color:#3300CC;" class="login">
+  <span>Sign in to Campus Food App</span>
+  <form style="margin-left:20px;" action="/users/signIn" method="post">
     <br/>User ID:   <br/>
     <input id="userId" type="text" name="uname" style="width: 140px;"/>
     <br/>
@@ -11,5 +11,6 @@
     <input id="password" type="password" name="password" style="width: 140px;"/>
     <br/>  <br/>
     <input type="submit" id="signIn" value="Sign in"/>  <%= link_to 'New User', new_user_path %>  <span style="font-size: 7pt;">(Sign up here for a new account)</span>
+	<br/><br/>
   </form>
 </div>

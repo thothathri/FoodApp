@@ -1,12 +1,13 @@
+<div style="border:2px solid #CFECEC;border-radius: 10px;box-shadow: rgba(0,0,0,0.4) 2px 2px 0 2px;margin-left:3%; width:60%;text-indent:20px;">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Event Title:</b>
   <%= @campus_food.title %>
 </p>
 
 <p>
-  <b>Food:</b>
+  <b>Free Food:</b>
   <%= @campus_food.food %>
 </p>
 
@@ -21,29 +22,20 @@
 </p>
 
 <p>
-  <b>Start:</b>
+  <b>Starts at:</b>
   <%= @campus_food.start %>
 </p>
 
 <p>
-  <b>End:</b>
+  <b>Ends at:</b>
   <%= @campus_food.end %>
 </p>
 
 <p>
-  <b>Type:</b>
-  <%= @campus_food.type %>
-</p>
-
-<p>
-  <b>Desc:</b>
+  <b>Description:</b>
   <%= @campus_food.desc %>
 </p>
-<p>
-	<%= @loc %>
-</p>
 
-===
 <script type="text/javascript"
         src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">
@@ -75,16 +67,18 @@
 		google.maps.event.addDomListener(window, 'load', initialize);  
 
     </script>
-	
+	     
 			<input type="text" name="title" id="title" value=""
-						style="width: 1200px; height: 30px; border:none" readonly="readonly" />
+						style="width: 700px; height: 30px; border:none" readonly="readonly" />
 		<div class="map" id="map_canvas" style="width: 500px; height: 300px"></div>
 </body>
 
 
 
+</div>
 
-===
-
+<div style="margin-left:3%">
+<br/>
 <%= link_to 'Edit', edit_campus_food_path(@campus_food) %> |
 <%= link_to 'Back', campus_foods_path %>
+</div>

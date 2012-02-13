@@ -32,7 +32,7 @@ class CampusFoodsController < ApplicationController
 	@locations = Location.all
 	@temp = []
 	for each in @locations
-		@temp.push(each.loc)
+		@temp.push(each.loc.to_s)
 	end
     respond_to do |format|
       format.html # new.html.erb
@@ -50,7 +50,7 @@ class CampusFoodsController < ApplicationController
   # POST /campus_foods.json
   def create
     @campus_food = CampusFood.new(params[:campus_food])
-
+	@campus_food.location = params[:tags]
     respond_to do |format|
       if @campus_food.save
         format.html { redirect_to campus_foods_path, notice: 'Campus food was successfully created.' }
@@ -66,7 +66,7 @@ class CampusFoodsController < ApplicationController
   # PUT /campus_foods/1.json
   def update
     @campus_food = CampusFood.find(params[:id])
-
+	@campus_food.location = params[:tags]
     respond_to do |format|
       if @campus_food.update_attributes(params[:campus_food])
         format.html { redirect_to campus_foods_path, notice: 'Campus food was successfully updated.' }

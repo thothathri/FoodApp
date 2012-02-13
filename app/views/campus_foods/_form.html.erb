@@ -11,11 +11,12 @@
     </div>
   <% end %>
 <head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src = " https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script src = " https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <script>
 	$(function() {
-		var availableTags = <%= @temp %>
+		var availableTags = ["<%= @temp[0] %>","<%= @temp[1] %>","<%= @temp[2] %>","<%= @temp[3] %>","<%= @temp[4] %>","<%= @temp[5] %>","<%= @temp[6] %>"];
 		$( "#tags" ).autocomplete({
 			source: availableTags
 		});
@@ -24,43 +25,51 @@
 
 </head>
 	
+<div class="demo">
 
+
+
+</div><!-- End demo -->
+
+<div style="border:2px solid #CFECEC;border-radius: 10px;box-shadow: rgba(0,0,0,0.4) 2px 2px 0 2px;margin-left:3%; width:60%">
 
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, 'Event Title*' %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :food %><br />
+    <%= f.label :food, 'Free food*' %><br />
     <%= f.text_field :food %>
   </div>
-  <div class="field111">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-    <%= link_to 'Or Add New Location', :controller => 'locations', :action=> 'new' %>
+  <div class="ui-widget">
+       <label for="tags">Locations: </label> <br />
+       <input type="text" id="tags" name="tags">
+       <%= link_to 'Or Add New Location', :controller => 'locations', :action=> 'new' %>
   </div>
+  <br />
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label :date, 'Date*' %><br />
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :start %><br />
+    <%= f.label :start, 'Starts at*' %><br />
     <%= f.text_field :start %>
   </div>
   <div class="field">
-    <%= f.label :end %><br />
+    <%= f.label :end, 'Ends at*' %><br />
     <%= f.text_field :end %>
   </div>
-  <div class="field">
+  <div class="field", 'Event type'>
     <%= f.label :type %><br />
     <%= f.text_field :type %>
   </div>
-  <div class="field">
+  <div class="field" 'Description'>
     <%= f.label :desc %><br />
-    <%= f.text_area :desc %>
+    <%= f.text_area :desc, :cols =>30, :rows =>5%>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
