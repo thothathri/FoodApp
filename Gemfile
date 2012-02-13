@@ -25,7 +25,7 @@ end
 
 gem 'jquery-rails'
 gem "execjs"
-
+gem 'therubyracer' , :platforms => :ruby
 
 gem 'geocoder'
 
