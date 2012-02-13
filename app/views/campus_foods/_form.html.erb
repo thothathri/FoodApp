@@ -1,0 +1,66 @@
+<%= form_for(@campus_food) do |f| %>
+  <% if @campus_food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campus_food.errors.count, "error") %> prohibited this campus_food from being saved:</h2>
+
+      <ul>
+      <% @campus_food.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<head>
+<script src = " https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src = " https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script>
+	$(function() {
+		var availableTags = <%= @temp %>
+		$( "#tags" ).autocomplete({
+			source: availableTags
+		});
+	});
+	</script>
+
+</head>
+	
+
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :food %><br />
+    <%= f.text_field :food %>
+  </div>
+  <div class="field111">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+    <%= link_to 'Or Add New Location', :controller => 'locations', :action=> 'new' %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= f.text_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br />
+    <%= f.text_field :end %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_area :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

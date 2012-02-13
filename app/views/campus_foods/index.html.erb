@@ -1,0 +1,37 @@
+<h1>Campus free foods!!</h1>
+
+<table>
+  <tr>
+    <th style="width:120px">Event Title</th>
+    <th style="width:120px">Free Food</th>
+    <th style="width:120px">Location</th>
+    <th style="width:120px">Date</th>
+    <th style="width:90px">Starts at</th>
+    <th style="width:90px">Ends at</th>
+    <th style="width:120px">Event Type</th>
+    <th style="width:150px">Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @campus_foods.each do |campus_food| %>
+  <tr <%- if campus_food.id % 2 !=0%> id="odd" <%-end-%>>
+    <td style="padding:none;width:120px; text-align:center;"><%= campus_food.title %></td>
+    <td style="width:120px;text-align:center;"><%= campus_food.food %></td>
+    <td style="width:120px; text-align:center;"><%= campus_food.location %></td>
+    <td style="width:120px; text-align:center;"><%= campus_food.date %></td>
+    <td style="width:90px; text-align:center;"><%= campus_food.start %></td>
+    <td style="width:90px; text-align:center;"><%= campus_food.end %></td>
+    <td style="width:120px; text-align:center;"><%= campus_food.type %></td>
+    <td style="width:150px; text-align:center;"><%= campus_food.desc %></td>
+    <td><%= link_to 'Show', :controller => 'campus_foods', :action =>'show', :id => campus_food.id, :loc => campus_food.location %></td>
+    <td><%= link_to 'Edit', edit_campus_food_path(campus_food) %></td>
+    <td><%= link_to 'Destroy', campus_food, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Campus food', new_campus_food_path %>

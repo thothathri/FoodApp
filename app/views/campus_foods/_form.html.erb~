@@ -1,0 +1,50 @@
+<%= form_for(@campus_food) do |f| %>
+  <% if @campus_food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campus_food.errors.count, "error") %> prohibited this campus_food from being saved:</h2>
+
+      <ul>
+      <% @campus_food.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Event Title* %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :Free Food* %><br />
+    <%= f.text_field :food %>
+  </div>
+  <div class="field">
+    <%= f.label :Location* %><br />
+    <%= f.text_field :location %>
+    <%= link_to 'Or Add New Location', :controller => 'location', :action=> 'new' %>
+  </div>
+  <div class="field">
+    <%= f.label : Event Date* %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :Starts at* %><br />
+    <%= f.text_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :Ends at* %><br />
+    <%= f.text_field :end %>
+  </div>
+  <div class="field">
+    <%= f.label :Type of Event %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br />
+    <%= f.text_area :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

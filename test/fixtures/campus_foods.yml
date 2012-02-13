@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  food: MyString
+  location: MyString
+  date: 2012-02-11
+  start: MyString
+  end: MyString
+  type: 
+  desc: MyText
+
+two:
+  title: MyString
+  food: MyString
+  location: MyString
+  date: 2012-02-11
+  start: MyString
+  end: MyString
+  type: 
+  desc: MyText

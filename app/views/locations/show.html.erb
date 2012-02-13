@@ -1,0 +1,70 @@
+
+<body onload="initialize()">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Location:</b>
+  <%= @location.loc %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @location.lat %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @location.lng %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @temp %>
+</p>
+
+====
+    <script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+		var map;
+		var i=0;
+		var pic;
+		var marker;
+		var lat = <%=@location.lat%>;
+		var lng = <%=@location.lng%>;
+		function initialize() {
+			var myOptions = {
+			  zoom: 15,
+			  // center: new google.maps.LatLng(, ),
+			  center: new google.maps.LatLng(lat, lng),
+			  //center: new google.maps.Address('D.H. Hill Library, North Carolina State University, Raleigh, NC 27607, USA'),
+			  mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			map = new google.maps.Map(document.getElementById('map_canvas'),
+				myOptions);
+				
+			markers = new google.maps.Marker({
+					position: new google.maps.LatLng(lat, lng),
+					map: map,
+					title:"sup"
+				});
+
+					
+		}	  
+		google.maps.event.addDomListener(window, 'load', initialize);  
+
+    </script>
+	
+			<input type="text" name="title" id="title" value=""
+						style="width: 1200px; height: 30px; border:none" readonly="readonly" />
+		<div class="map" id="map_canvas" style="width: 500px; height: 300px"></div>
+</body>
+
+
+
+
+
+====
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
