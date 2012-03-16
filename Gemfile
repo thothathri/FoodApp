@@ -24,7 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "execjs"
+gem "execjs-1.3.0"
 gem 'therubyracer' , :platforms => :ruby
 
 gem 'geocoder'
