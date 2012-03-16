@@ -8,7 +8,7 @@ gem 'rails', '3.1.1'
 group :production do
   # gems specifically for Heroku go here
   gem "pg"
-  gem 'therubyracer' , :platforms => :ruby
+  gem 'therubyracer-heroku', '0.8.1.pre3'
 
 end
 
@@ -24,7 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "execjs-1.3.0"
+gem "execjs"
 gem 'therubyracer' , :platforms => :ruby
 
 gem 'geocoder'
