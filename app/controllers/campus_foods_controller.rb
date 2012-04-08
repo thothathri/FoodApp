@@ -91,7 +91,7 @@ class CampusFoodsController < ApplicationController
   # POST /campus_foods.json
   def create
     @campus_food = CampusFood.new(params[:campus_food])
-	@campus_food.location = params[:tags]
+	#@campus_food.location = params[:tags]
     respond_to do |format|
       if @campus_food.save
         format.html { redirect_to campus_foods_path, notice: 'Campus food was successfully created.' }

@@ -17,7 +17,7 @@
 <script>
 	$(function() {
 		var availableTags = ["<%= @temp[0] %>","<%= @temp[1] %>","<%= @temp[2] %>","<%= @temp[3] %>","<%= @temp[4] %>","<%= @temp[5] %>","<%= @temp[6] %>"];
-		$( "#tags" ).autocomplete({
+		$( "#campus_food_location" ).autocomplete({
 			source: availableTags
 		});
 	});
@@ -43,8 +43,8 @@
     <%= f.text_field :food %>
   </div>
   <div class="ui-widget">
-       <label for="tags">Locations: </label> <br />
-       <input type="text" id="tags" name="tags">
+       <label for="campus_food_location">Locations: </label> <br />
+       <input type="text" id="campus_food_location" name="campus_food[location]">
        <%= link_to 'Or Add New Location', :controller => 'locations', :action=> 'new' %>
   </div>
   <br />
