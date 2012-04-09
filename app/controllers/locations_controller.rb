@@ -42,8 +42,8 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new
-	@location.loc = params[:location]
-	s = Geocoder.search(params[:location])
+	@location.loc = params[:location][:loc]
+	s = Geocoder.search(params[:location][:loc])
 	@location.lat = s[0].latitude
 	@location.lng = s[0].longitude
 
