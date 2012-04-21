@@ -49,22 +49,13 @@
         <%- end -%>
 		function initialize() {
 			var myOptions = {
-			  zoom: 15,
-			  // center: new google.maps.LatLng(, ),
+			  zoom: 10,
 			  center: new google.maps.LatLng(lat, lng),
-			  //center: new google.maps.Address('D.H. Hill Library, North Carolina State University, Raleigh, NC 27607, USA'),
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			map = new google.maps.Map(document.getElementById('map_canvas'),
 				myOptions);
 				
-			markers = new google.maps.Marker({
-					position: new google.maps.LatLng(lat, lng),
-					map: map,
-					title:"sup"
-				});
-
-					
 		}	  
 		google.maps.event.addDomListener(window, 'load', initialize);  
 
