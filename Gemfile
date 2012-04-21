@@ -8,7 +8,8 @@ gem 'rails', '3.1.1'
 group :production do
   # gems specifically for Heroku go here
   gem "pg"
-  gem 'therubyracer-heroku', '0.8.1.pre3'
+  #gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'therubyracer' , :platforms => :ruby
 
 end
 

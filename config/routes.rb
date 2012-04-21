@@ -2,6 +2,9 @@ Campusfoodie::Application.routes.draw do
 
   match "/users/login" => "users#login"
   match "/users/signIn" => "users#signIn"
+  match "/campus_foods/today" => "campus_foods#today"
+  match "/campus_foods/future" => "campus_foods#future"
+  match "/campus_foods/search" => "campus_foods#search"
   resources :users
 
   resources :locations

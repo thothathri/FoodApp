@@ -3,13 +3,51 @@ class CampusFoodsController < ApplicationController
   # GET /campus_foods.json
   def index
     @campus_foods = CampusFood.all
-
+    #for each in @campus_foods
+     # each.start.to_time
+      #each.end.to_time
+    #end
+    #@campus_foods.sort_by(&:start)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @campus_foods }
     end
   end
 
+   def today
+    @campus_foods = CampusFood.find_all_by_date(Date.today)
+    #for each in @campus_foods
+     # each.start.to_time
+      #each.end.to_time
+    #end
+    #@campus_foods.sort_by(&:start)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @campus_foods }
+    end
+   end
+
+  def future
+    @campus_foods = CampusFood.all(:conditions => ["date > ?",Date.today])
+    #for each in @campus_foods
+     # each.start.to_time
+      #each.end.to_time
+    #end
+    #@campus_foods.sort_by(&:start)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @campus_foods }
+    end
+  end
+
+  def search
+    @food = params[:food]
+    @results = CampusFood.find(:all, :conditions => ["food like ?", "%#{@food}%"])
+    respond_to do |format|
+      format.html # search.html.erb
+      format.json { render json: @results }
+    end
+  end
   # GET /campus_foods/1
   # GET /campus_foods/1.json
   def show
@@ -17,11 +55,14 @@ class CampusFoodsController < ApplicationController
 	@loc = params[:loc]
 	
 	@locations = Location.all(:conditions =>[ "loc like ? ", "%#{params[:loc]}%"])
-	@lat = @locations[0].lat
-	@lng = @locations[0].lng
+	if !@locations.empty?
+   @lat = @locations[0].lat
+   @lng = @locations[0].lng
+  end
+
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @campus_food }
+      format.json { render json: @locations }
     end
   end
 

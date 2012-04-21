@@ -13,5 +13,6 @@ class CreateAddToUsers < ActiveRecord::Migration
 	end
       t.timestamps
     
+    end
   end
 end

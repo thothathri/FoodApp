@@ -43,8 +43,10 @@
 		var i=0;
 		var pic;
 		var marker;
-		var lat = <%=@locations[0].lat%>;
-		var lng = <%=@locations[0].lng%>;
+        <%- if !@lat.nil? and !@lng.nil? -%>
+		    var lat = <%=@locations[0].lat%>;
+		    var lng = <%=@locations[0].lng%>;
+        <%- end -%>
 		function initialize() {
 			var myOptions = {
 			  zoom: 15,
