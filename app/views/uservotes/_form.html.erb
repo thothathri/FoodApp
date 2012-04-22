@@ -1,0 +1,25 @@
+<%= form_for(@uservote) do |f| %>
+  <% if @uservote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@uservote.errors.count, "error") %> prohibited this uservote from being saved:</h2>
+
+      <ul>
+      <% @uservote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fuid %><br />
+    <%= f.text_field :fuid %>
+  </div>
+  <div class="field">
+    <%= f.label :eventid %><br />
+    <%= f.number_field :eventid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

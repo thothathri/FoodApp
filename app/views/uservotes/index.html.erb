@@ -1,0 +1,25 @@
+<h1>Listing uservotes</h1>
+
+<table>
+  <tr>
+    <th>Fuid</th>
+    <th>Eventid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @uservotes.each do |uservote| %>
+  <tr>
+    <td><%= uservote.fuid %></td>
+    <td><%= uservote.eventid %></td>
+    <td><%= link_to 'Show', uservote %></td>
+    <td><%= link_to 'Edit', edit_uservote_path(uservote) %></td>
+    <td><%= link_to 'Destroy', uservote, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Uservote', new_uservote_path %>

@@ -14,7 +14,7 @@
     <th style="width:50px"></th>
   </tr>
 
-<% @campus_foods.sort_by(&:start).each do |campus_food| %>
+<% @campus_foods.each do |campus_food| %>
   <tr <%- if campus_food.id % 2 !=0%> id="odd" <%-end-%>>
     <td style="padding:none;width:120px; text-align:center;"><%= campus_food.title %></td>
     <td style="width:120px;text-align:center;"><%= campus_food.food %></td>

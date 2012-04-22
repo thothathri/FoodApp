@@ -1,5 +1,7 @@
 Campusfoodie::Application.routes.draw do
 
+  resources :uservotes
+
   match "/users/login" => "users#login"
   match "/users/signIn" => "users#signIn"
   match "/campus_foods/today" => "campus_foods#today"

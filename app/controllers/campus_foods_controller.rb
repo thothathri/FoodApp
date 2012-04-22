@@ -15,7 +15,8 @@ class CampusFoodsController < ApplicationController
   end
 
    def today
-    @campus_foods = CampusFood.find_all_by_date(Date.today)
+    #@campus_foods = CampusFood.find_all_by_date(Date.today)
+     @campus_foods = CampusFood.all(:conditions => ["date = ?",Date.today] ,:order => 'date,start')
     #for each in @campus_foods
      # each.start.to_time
       #each.end.to_time
@@ -28,7 +29,7 @@ class CampusFoodsController < ApplicationController
    end
 
   def future
-    @campus_foods = CampusFood.all(:conditions => ["date > ?",Date.today])
+    @campus_foods = CampusFood.all(:conditions => ["date > ?",Date.today],:order => 'date,start')
     #for each in @campus_foods
      # each.start.to_time
       #each.end.to_time
@@ -84,7 +85,14 @@ class CampusFoodsController < ApplicationController
   # GET /campus_foods/1/edit
   def edit
     @campus_food = CampusFood.find(params[:id])
-	
+    @temp = []
+    @locations = Location.all
+    if !@locations.nil?
+      for each in @locations
+        @temp.push(each.loc.to_s)
+      end
+    end
+
   end
 
   # POST /campus_foods
