@@ -41,16 +41,25 @@ class UservotesController < ApplicationController
   # POST /uservotes.json
   def create
     @uservote = Uservote.new(params[:uservote])
-
-    respond_to do |format|
+    fuid =      params[:uservote][:fuid]
+    eventid =    params[:uservote][:eventid]
+    @entry = Uservote.find(:all,:conditions=> ["fuid like ? and eventid like ? ", "#{fuid}","#{eventid}"])
+    Rails.logger.info("fuid is #{fuid}, event id is : #{eventid}, entry is #{@entry}")
+    if !@entry.empty?
+           render :json => { :status => :error, :message => "Duplicate entry" }.to_json, :status => 400
+    else
+      respond_to do |format|
       if @uservote.save
         format.html { redirect_to @uservote, notice: 'Uservote was successfully created.' }
-        format.json { render json: @uservote, status: :created, location: @uservote }
+        format.json { render json: @entry, status: :created, location: @uservote }
       else
         format.html { render action: "new" }
         format.json { render json: @uservote.errors, status: :unprocessable_entity }
       end
+      end
+
     end
+
   end
 
   # PUT /uservotes/1

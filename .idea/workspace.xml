@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19024ee7-63a3-4c3d-b57a-d0874e1279cf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FoodApp.iml" afterPath="$PROJECT_DIR$/.idea/FoodApp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/campus_foods_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/campus_foods_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/campus_foods/future.html.erb" afterPath="$PROJECT_DIR$/app/views/campus_foods/future.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/uservotes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/uservotes_controller.rb" />
     </list>
     <ignored path="FoodApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +32,7 @@
       <file leaf-file-name="campus_foods_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/campus_foods_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="40" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.0">
+            <state line="39" column="40" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -56,7 +50,7 @@
       <file leaf-file-name="uservotes_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/uservotes_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="31" selection-start="1759" selection-end="1759" vertical-scroll-proportion="0.9403509">
+            <state line="60" column="4" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.8877193">
               <folding />
             </state>
           </provider>
@@ -612,7 +606,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/campus_foods_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="40" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.0">
+        <state line="39" column="40" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -626,7 +620,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/uservotes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="31" selection-start="1759" selection-end="1759" vertical-scroll-proportion="0.9403509">
+        <state line="60" column="4" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.8877193">
           <folding />
         </state>
       </provider>
